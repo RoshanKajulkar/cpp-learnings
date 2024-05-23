@@ -1,0 +1,2 @@
+what is time complexity ? 
+The rate at which the time taken increases with respect to the input size.
