@@ -37,9 +37,68 @@ int reverseNum(int x) {
         return reversedNum;
 }
 
+// The Euclidean Algorithm is a method for finding the greatest common divisor of two numbers. It operates on the principle that the GCD of two numbers remains the same even if the smaller number is subtracted from the larger number.
+int getGCD(int num1, int num2) {
+
+    while(num1 >0 && num2 > 0) {
+
+        if(num1 > num2) {
+            num1 = num1 % num2;
+        } else {
+            num2 = num2 % num1;
+        }
+    }
+
+    return num1 == 0 ? num2 : num1;
+}
+
+// An Amrstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+bool isArmstrongNum(int num) {
+    int originalNum = num;
+    int digitCount = (int)log10(num) + 1;
+
+    int sum = 0;
+
+    while(num > 0) {
+        int lastDigit = num % 10;
+        num = num / 10;
+
+
+        sum += pow(lastDigit, digitCount);
+    }
+
+    return sum == originalNum ? true : false;
+}
+
+void printDivisors(int num) {
+    int sqrtN = sqrt(num);
+
+    for(int i=1; i<=sqrtN; i++) {
+        if(num % i == 0) {
+            cout << i << " ";
+
+            if(i != num / i) {
+                cout << num / i << " "; 
+            }
+        } 
+    }
+}
+
+bool isPrime(int num) {
+    int sqrtN = sqrt(num);
+
+    for(int i=2; i<=sqrtN; i++) {
+        if(num%i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 int main() {
 
-    cout << INT_MAX;
-    cout << INT_MIN;
+    cout << "Math Problems";
+    
     return 0;
 }
