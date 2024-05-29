@@ -1,0 +1,10 @@
+map 
+    -> stores in ordered style and hence log n is storing and fetching time complexity
+    -> key can be any data type including complex like pair
+
+unordered_map 
+    -> storing - O(1) and fetching on avg O(1) but worst O(n)
+    -> key cannot be complex it has to be primitive like int double etc
+
+hashing algo 
+    -> division method - chaining , internally linked list is used during collision
